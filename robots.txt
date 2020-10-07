@@ -1,9 +1,5 @@
 User-agent: *
 Allow: /index.html
-Disallow: /edu.html
-Disallow: /apply.html
 Disallow: /404.html
-Disallow: /laboratory.html
-Disallow: /url/
-Disallow: /admin/
+Disallow: /zh-cn/
 Disallow: /en-us/
