@@ -1,11 +1,15 @@
 <!doctype html>
-<html><!--Server：Tencent Cloud-->
+<html>
 <head>
 <meta charset="utf-8">
-<title>Lanky Time</title>
+<title>Lanky Local Time - V1.0</title>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Lanky6/CDN@master/Lanky/helper/js/jquery.min.js"></script>
 <script type="text/javascript"  src="https://cdn.jsdelivr.net/gh/Lanky6/CDN@master/Lanky/helper/js/class.main.js" ></script>
 <style>
+	a {
+		text-decoration-line: none;
+		text-decoration: none;
+	}
 span {
   margin: 0;
   padding: 0;
@@ -13,39 +17,53 @@ span {
 
 #clock {
   font-family: 'Share Tech Mono', monospace;
-  color: #ffffff;
-  text-align: center;
-  color: #0052D9;
+  color: #FFFFFF;
+  text-align: left;
+  color: #000000;
 }
 #clock .time {
   letter-spacing: 0.05em;
-  font-size: 30px;
+  font-size: 13px;
   padding: 5px 0;
+	font-weight: bold;
 }
 #clock .date {
   letter-spacing: 0.1em;
-  font-size: 15px;
+  font-size: 13px;
 }
 #clock .text {
   letter-spacing: 0.1em;
-  font-size: 15px;
+  font-size: 13px;
   padding: 20px 0 0;
+  font-weight: bold;
 }
+	#local {
+	color: rgba(255,255,255,0.00);
+	letter-spacing: 0.1em;
+	font-size: 13px;
+	padding: 20px 0 0;
+	font-weight: bold;
+	}
 </style>
 </head>
 <body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false" style="overflow:-Scroll;overflow-x:hidden;overflow-y:hidden">
+<div>
+<a href="https://wannianli.tianqi.com/" target="_blank">
 <div id="clock">
 <div id="main"></div>
 <span class="date"></span>
-<span class="time" id="time">Time</span>
-<br><span class="text" id="text">Date</span>
+<span id="local">TD</span>
+<span class="time" id="time">Time</span><br>
+<span class="text" id="text">Date</span>
 <span id="sitetime"> </span><br><br>
+</div>
+</a>
 </div>
     
 <script>
-var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 var timerID = setInterval(updateTime, 1000);
-var sitetime="1999/01/01 00:00:00";
+var sitetime="YYYY/MM/DD hh:mm:ss";
 updateTime();
 function updateTime() {
     var cd = new Date();
