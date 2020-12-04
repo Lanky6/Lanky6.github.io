@@ -1,2 +1,0 @@
-http://api.lanky.top/bing.php
-http://api.mkblog.cn/bing/jump.php
