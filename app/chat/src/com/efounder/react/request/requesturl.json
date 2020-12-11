@@ -1,0 +1,5 @@
+{
+	"panserver": "https://tc.ipcom.io/panserver",
+	"imserver": "https://im.ipcom.io/IMServer",
+	"tcserver": "https://tc.ipcom.io"
+}
