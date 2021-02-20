@@ -2,8 +2,5 @@ User-agent: *
 Allow: /index.html
 Disallow: /404.html
 Disallow: /zh-cn/
-Disallow: /en-us/
-Disallow: /url/
-Disallow: /helper/
-Disallow: /box/
-Disallow: /test/
+Disallow: /lab/
+Disallow: /m.html

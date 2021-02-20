@@ -1,0 +1,86 @@
+<!doctype html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title> 表白墙 </title>
+    
+    <link type="text/css" rel="stylesheet" href="./source/default.css">
+    <script type="text/javascript" src="./source/jquery.min.js"></script>
+    <script type="text/javascript" src="./source/jscex.min.js"></script>
+    <script type="text/javascript" src="./source/jscex-parser.js"></script>
+
+</head>
+<body>
+    <!-- 背景音乐部分 -->
+    <audio id="loveBgm" src="bgm.mp3" loop="loop"></audio>  
+    
+	<div id="main">
+        <div id="error">
+            本页面采用HTML5编辑，目前您的浏览器无法显示，请换成(<a href="https://www.google.cn/chrome/">Google Chrome</a>)
+            或者(<a href="https://www.mozilla.org/zh-CN/firefox/new/">Firefox</a>)，或者其他游览器的最新版本。
+        </div>
+		<div id="wrap">
+			<div id="text">
+				<div id="code">
+					<span class="say">亲爱的<span id="name"></span></span><br>
+                    <span class="say"><span id="fist-say"></span></span><br>
+                    <span class="say"> </span><br><br><br>
+                    <span class="say">我想在这里对你说</span><br>
+                    <span class="say"> </span><br>
+                    <span class="say"><span class="space"></span><span id="last-say"></span></span><br>
+                    <span class="say"><span class="space"></span> <span id="my-name"></span></span>
+				</div>
+			</div>
+			<div id="clock-box">
+				<span style="color:#666666;"><span style="color:#33CC00;">截至今天我们已经</span> 默默走过了</span>
+				<div id="clock"></div>
+			</div>
+			<canvas id="canvas" width="1100" height="680"></canvas>
+		</div>
+	</div>
+	
+    <script charset="UTF-8">
+    
+    function GetQueryString(name)   //获取get参数
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null) 
+            return decodeURI(r[2]); 
+        return null;
+    }
+    
+    $(function(){
+        $("#name").text(GetQueryString("you")); //获取对方的名字
+        $("#fist-say").text(GetQueryString("yi"));  //获取第一句话
+        $("#last-say").text(GetQueryString("wu"));  //获取最终的话
+        $("#my-name").text(GetQueryString("me"));   //获取我的名字
+    })
+    
+    var lover = {};
+    lover.info = {
+        name: " [点我]", //点开时爱心桃旁边的字
+        year: GetQueryString("year"),     //相遇的年份
+        month: GetQueryString("yue"),      //月
+        day: GetQueryString("ri"),        //日
+        hour: 0,       //小时
+        minute: 0,     //分钟
+        second: 0,      //秒
+        
+        debug: false,   //是否开启调试模式（如果是true，则会弹窗提示为什么加载出错）
+    }
+    </script>
+	
+    
+    <script type="text/javascript" src="./source/jscex-jit.js"></script>
+    <script type="text/javascript" src="./source/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./source/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./source/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./source/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./source/love.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./source/canvas.js" charset="utf-8"></script>
+    
+</body>
+</html>
